@@ -1,5 +1,13 @@
 # lara-bbs项目总结
 
+## API资源路由
+
+## 中间件
+- Laravel 中间件 (Middleware) 为我们提供了一种非常棒的过滤机制来过滤进入应用的 HTTP 请求，例如，当我们使用 Auth 中间件来验证用户的身份时，如果用户未通过身份验证，则 Auth 中间件会把用户重定向到登录页面。如果用户通过了身份验证，则 Auth 中间件会通过此请求并接着往下执行。Laravel 框架默认为我们内置了一些中间件，例如身份验证、CSRF 保护等。所有的中间件文件都被放在项目的 app/Http/Middleware 文件夹中。
+- 
+## 授权策略
+- 当 id 为 2 的用户去尝试更新 id 为 1 的用户信息时，我们应该返回一个 403 禁止访问的异常。在 Laravel 中可以使用 授权策略 (Policy) 来对用户的操作权限进行验证，在用户未经授权进行操作时将返回 403 禁止访问的异常。
+
 ## yarn的安装与使用
 - 各个版本参考 https://yarn.bootcss.com/docs/install.html
 
@@ -23,7 +31,16 @@ sudo apt-get update && sudo apt-get install yarn
 php artisan vendor:publish --provider='Mews\Captcha\CaptchaServiceProvider' 
 ```
 - 打开配置文件，查看其内容。
-
+## 语言提示包
+- 安装
+``` 
+composer require "overtrue/laravel-lang:~3.0"
+```
+##  laravel默认安装的Carbon包
+- 在AppServiceProvider中配置为中文
+```
+ \Carbon\Carbon::setLocale('zh');
+ ```
 ## 图片裁切的包
 - 安装
 ```
