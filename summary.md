@@ -67,3 +67,12 @@ git commit -m "Add generator"
 php artisan make:scaffold Projects --schema="name:string:index,description:text:nullable,subscriber_count:integer:unsigned:default(0)"
 ```
 
+## 安装 Debugbar
+- 使用 Composer 安装：
+``` 
+composer require "barryvdh/laravel-debugbar:~3.1" --dev
+```
+- 生成配置文件，存放位置 config/debugbar.php：
+``` 
+php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+```
