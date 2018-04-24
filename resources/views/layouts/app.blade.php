@@ -21,6 +21,7 @@
 
     <div class="container">
 
+        @include('common._message')
         @yield('content')
 
     </div>
