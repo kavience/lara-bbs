@@ -23,3 +23,13 @@ sudo apt-get update && sudo apt-get install yarn
 php artisan vendor:publish --provider='Mews\Captcha\CaptchaServiceProvider' 
 ```
 - 打开配置文件，查看其内容。
+
+## 图片裁切的包
+- 安装
+```
+composer require intervention/image
+```
+- 配置信息
+```
+php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+```
