@@ -50,3 +50,15 @@ composer require intervention/image
 ```
 php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
 ```
+
+## 代码生成器
+- 开发时遵守的代码风格是 Laravel 项目开发规范。遵照此规范，在实际操作中，有许多重复，接下来推荐一款专为此规范量身定制的代码生成器 —— Laravel 5.x Scaffold Generator 。代码生成器能让你通过执行一条 Artisan 命令，完成注册路由、新建模型、新建表单验证类、新建资源控制器以及所需视图文件等任务，不仅约束了项目开发的风格，还能极大地提高我们的开发效率。
+- 安装
+``` 
+composer require "summerblue/generator:~0.5" --dev
+```
+- 版本标记
+``` 
+git add -A
+git commit -m "Add generator"
+```
