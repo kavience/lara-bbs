@@ -62,7 +62,8 @@ composer require "summerblue/generator:~0.5" --dev
 git add -A
 git commit -m "Add generator"
 ```
-- 试运行
+- 试运行(谨慎！会产生不必要的字段，记得执行之前提交版本，然后在返回到该版本)
 ``` 
 php artisan make:scaffold Projects --schema="name:string:index,description:text:nullable,subscriber_count:integer:unsigned:default(0)"
 ```
+
