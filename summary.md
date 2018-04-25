@@ -92,3 +92,10 @@ active_class($condition, $activeClass = 'active', $inactiveClass = '')
     - if_uri() - 判断当前的 url 是否满足指定的 url；
     - if_route_pattern() - 判断当前的路由是否包含指定的字符；
     - if_uri_pattern() - 判断当前的 url 是否含有指定的字符；
+## Laravel 本地作用域 。
+- 介绍
+    - 本地作用域允许我们定义通用的约束集合以便在应用中复用。
+    
+- 使用
+    - 要定义这样的一个作用域，只需简单在对应 Eloquent 模型方法前加上一个 scope 前缀，作用域总是返回 查询构建器。一旦定义了作用域，则可以在查询模型时调用作用域方法。在进行方法调用时不需要加上 scope 前缀。
+     
