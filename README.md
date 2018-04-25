@@ -110,3 +110,10 @@ active_class($condition, $activeClass = 'active', $inactiveClass = '')
 - 解决方案
     - 使用预加载，在控制器中使用模型的时候，添加with()函数，进行预加载 
     
+## 模型观察器
+- Eloquent模型会触发许多事件（Event），我们可以对模型的生命周期内多个时间点进行监控：创建，创建，更新，更新，保存，保存，删除，删除，恢复，恢复。有特定的模型类在数据库保存或更新时，执行代码。一个当新模型被初次保存将会触发creating以及created事件。如果模型一个已经存在于数据库御姐调用了save方法，触发将会updating状语从句：updated事件。在这两种下情况都会触发saving状语从句：saved事件。
+  
+- Eloquent观察器允许我们对给定模型中进行事件监控，观察者类里的方法名对应Eloquent想监听的事件。每种方法接收model作为其唯一的参数。
+
+## Simditor编辑器
+- 安装
