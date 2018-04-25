@@ -116,4 +116,27 @@ active_class($condition, $activeClass = 'active', $inactiveClass = '')
 - Eloquent观察器允许我们对给定模型中进行事件监控，观察者类里的方法名对应Eloquent想监听的事件。每种方法接收model作为其唯一的参数。
 
 ## Simditor编辑器
-- 安装
+- 手动安装
+``` 
+https://github.com/mycolorway/simditor/
+```
+
+## 解决XSS跨站攻击
+- 安装purifier
+``` 
+ composer require "mews/purifier:~2.0"
+```
+- 配置信息
+``` 
+php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"
+```
+- 修改配置
+
+- 使用配置
+``` 
+clean($topic->body, 'user_topic_body');
+```
+
+
+
+

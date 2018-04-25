@@ -17,6 +17,9 @@ Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit'
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
+//图片上传路由
+Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+
 
 
 
