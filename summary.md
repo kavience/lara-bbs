@@ -76,3 +76,19 @@ composer require "barryvdh/laravel-debugbar:~3.1" --dev
 ``` 
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 ```
+## 判断『路由命名』和『路由参数』为导航栏添加 active 类
+- 安装
+``` 
+composer require "hieu-le/active:~3.5"
+```
+- 使用
+``` 
+active_class($condition, $activeClass = 'active', $inactiveClass = '')
+```
+- 该包的其他函数
+    - if_route() - 判断当前对应的路由是否是指定的路由；
+    - if_route_param() - 判断当前的 url 有无指定的路由参数。
+    - if_query() - 判断指定的 GET 变量是否符合设置的值；
+    - if_uri() - 判断当前的 url 是否满足指定的 url；
+    - if_route_pattern() - 判断当前的路由是否包含指定的字符；
+    - if_uri_pattern() - 判断当前的 url 是否含有指定的字符；
