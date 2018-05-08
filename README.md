@@ -121,7 +121,7 @@ active_class($condition, $activeClass = 'active', $inactiveClass = '')
 https://github.com/mycolorway/simditor/
 ```
 
-## 解决XSS跨站攻击
+## 解决XSS(跨站攻击)跨站攻击
 - 安装purifier
 ``` 
  composer require "mews/purifier:~2.0"
@@ -130,8 +130,25 @@ https://github.com/mycolorway/simditor/
 ``` 
 php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"
 ```
-- 修改配置
-
+- 修改配置 \
+修改config/purifier.php为
+``` 
+return [
+    'encoding'      => 'UTF-8',
+    'finalize'      => true,
+    'cachePath'     => storage_path('app/purifier'),
+    'cacheFileMode' => 0755,
+    'settings'      => [
+        'user_topic_body' => [
+            'HTML.Doctype'             => 'XHTML 1.0 Transitional',
+            'HTML.Allowed'             => 'div,b,strong,i,em,a[href|title],ul,ol,ol[start],li,p[style],br,span[style],img[width|height|alt|src],*[style|class],pre,hr,code,h2,h3,h4,h5,h6,blockquote,del,table,thead,tbody,tr,th,td',
+            'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,margin,width,height,font-family,text-decoration,padding-left,color,background-color,text-align',
+            'AutoFormat.AutoParagraph' => true,
+            'AutoFormat.RemoveEmpty'   => true,
+        ],
+    ],
+];
+```
 - 使用配置
 ``` 
 clean($topic->body, 'user_topic_body');
