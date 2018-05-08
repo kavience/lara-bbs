@@ -153,7 +153,18 @@ return [
 ``` 
 clean($topic->body, 'user_topic_body');
 ```
+##安装http请求套件
+- 安装
+``` 
+composer require "guzzlehttp/guzzle:~6.3"
+```
+- 安装完即可使用
 
-
+## 安装依赖PinYin
+PinYin 是 安正超 开发的，基于 CC-CEDICT 词典的中文转拼音工具，是一套优质的汉字转拼音解决方案。
+- 安装
+``` 
+composer require "overtrue/pinyin:~3.0"
+```
 
 
