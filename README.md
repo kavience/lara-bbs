@@ -211,7 +211,27 @@ php artisan migrate
 php artisan make:notification TopicReplied
 ```
 ## 安装laravel-permission控制权限
+- 安装
 ``` 
 composer require "spatie/laravel-permission:~2.7"
 
+```
+- 配置
+``` 
+
+```
+## 安装用户切换工具
+- 安装
+``` 
+composer require "viacreative/sudo-su:~1.1"
+```
+
+- 配置。修改AppServiceProvider的register方法
+``` 
+public function register()
+    {
+        if (app()->isLocal()) {
+            $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
+        }
+    }
 ```
