@@ -218,7 +218,7 @@ composer require "spatie/laravel-permission:~2.7"
 ```
 - 配置
 ``` 
-
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
 ```
 ## 安装用户切换工具
 - 安装
@@ -234,4 +234,13 @@ public function register()
             $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
         }
     }
+```
+## 安装后台管理页面
+- 安装
+``` 
+composer require "summerblue/administrator:~1.1"
+```
+- 提取配置
+``` 
+php artisan vendor:publish --provider="Frozennode\Administrator\AdministratorServiceProvider
 ```
