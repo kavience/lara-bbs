@@ -195,3 +195,18 @@ php artisan make:job TranslateSlug
 ``` 
 php artisan queue:listen
 ```
+## Laravel 自带的一套极具扩展性的消息通知系统
+- 解释
+``` 
+什么是通知频道？
+通知频道是通知传播的途径，Laravel 自带的有数据库、邮件、短信（通过 Nexmo）以及 Slack。本章节中我们将使用数据库通知频道，后面也会使用到邮件通知频道。
+```
+- 准备数据库
+``` 
+php artisan notifications:table
+php artisan migrate
+```
+- 生成通知类
+``` 
+php artisan make:notification TopicReplied
+```
