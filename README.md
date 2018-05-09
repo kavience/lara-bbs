@@ -167,4 +167,31 @@ PinYin 是 安正超 开发的，基于 CC-CEDICT 词典的中文转拼音工具
 composer require "overtrue/pinyin:~3.0"
 ```
 
+## 安装predis 作为请求队列
+- 安装
+``` 
+composer require "predis/predis:~1.0"
 
+```
+- 修改env配置
+``` 
+QUEUE_DRIVER=redis
+```
+- 有时候队列中的任务会失败。Laravel 内置了一个方便的方式来指定任务重试的最大次数。当任务超出这个重试次数后，它就会被插入到 failed_jobs 数据表里面。我们可以使用 queue:failed-table 命令来创建 failed_jobs 表的迁移文件：
+``` 
+php artisan queue:failed-table
+```
+
+- 执行migrate
+``` 
+php artisan migrate
+```
+- 生成任务类
+``` 
+php artisan make:job TranslateSlug
+```
+
+- 启动监听
+``` 
+php artisan queue:listen
+```
