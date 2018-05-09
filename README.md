@@ -210,3 +210,8 @@ php artisan migrate
 ``` 
 php artisan make:notification TopicReplied
 ```
+## 安装laravel-permission控制权限
+``` 
+composer require "spatie/laravel-permission:~2.7"
+
+```
