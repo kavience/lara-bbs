@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@root');
+Route::get('/', 'TopicsController@index');
 
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
